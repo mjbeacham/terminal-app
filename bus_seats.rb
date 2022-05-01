@@ -1,4 +1,5 @@
 require './bus.rb'
+require 'colorize'
 
 $bus = Bus.load("bus.json");
 
@@ -25,6 +26,8 @@ def main_menu
     when '4'
       puts 'Thank you for using the bus seat allocation tool! Goodbye'
       break
+    when 'Top Secret'
+      admin_reset()
     else
       puts 'Invalid choice. Please try again using only a number.'
     end
@@ -52,6 +55,12 @@ def ticket_check
     $bus.check(ticket_number.upcase)
     break
   end
+end
+
+def admin_reset
+  $bus = Bus.new(8,4,{})
+  $bus.save("bus.json")
+  puts "Seat allocation has been reset".green
 end
 
 main_menu()

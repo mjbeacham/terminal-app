@@ -17,6 +17,13 @@ class Bus
     end
 
     def book(seat)
+        seat_letter = seat[0]
+        seat_row = seat[1].to_i
+        seat_letter_index = @@alphabet.index(seat_letter)
+        if seat_row > @@rows || !seat_letter_index || seat_letter_index > @@seats - 1 || seat.length > 2
+            puts "Sorry, " + seat.red + " this seat is invalid"
+            return false
+        end
         if !@@bookings[seat]
           puts seat
             @@bookings[seat] = Digest::SHA256.hexdigest(seat).slice(0,8).upcase
