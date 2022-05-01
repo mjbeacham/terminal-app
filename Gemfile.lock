@@ -1,7 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    colorize (0.8.1)
     diff-lcs (1.5.0)
+    digest (3.1.0)
+    json (2.6.1)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
       rspec-expectations (~> 3.11.0)
@@ -20,6 +23,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  colorize
+  digest
+  json
   rspec (~> 3.11)
 
 BUNDLED WITH
