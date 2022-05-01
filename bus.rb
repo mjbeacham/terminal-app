@@ -18,10 +18,13 @@ class Bus
 
     def book(seat)
         if !@@bookings[seat]
-            @@bookings[seat] = Digest::SHA256.hexdigest(seat).slice(0,8).upcase!
+          puts seat
+            @@bookings[seat] = Digest::SHA256.hexdigest(seat).slice(0,8).upcase
             puts "Congratulations, you have booked seat " + seat.green + ". Your ticket number is: " + @@bookings[seat].green
+            return true
         else
             puts "Sorry, " + seat.red + " is already booked."
+            return false
         end
     end
 
@@ -29,8 +32,10 @@ class Bus
         booking = @@bookings.key(ticket)
         if booking
             puts "You are booked in for seat " + booking.green + "."
+            return true
         else
             puts "Sorry, booking not found."
+            return false
         end
     end
 
@@ -84,17 +89,3 @@ class Bus
         puts divider
     end
 end
-
-# Tests
-bus = Bus.new(8,4,{})
-# bus = Bus.load("bus.json");
-puts bus.get_rows()
-bus.book("A2");
-bus.book("A2");
-bus.book("B7");
-bus.book("D3");
-bus.check("BED7ABEA");
-bus.draw();
-# bus.save("bus.json");
-# bus2 = Bus.load("bus.json");
-# puts bus2.get_rows()
