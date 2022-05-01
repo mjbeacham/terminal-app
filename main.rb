@@ -86,40 +86,15 @@ class Bus
 end
 
 # Tests
-# bus = Bus.new(8,4,{})
-# # bus = Bus.load("bus.json");
-# puts bus.get_rows()
-# bus.book("A2");
-# bus.book("A2");
-# bus.book("B7");
-# bus.book("D3");
-# bus.check("BED7ABEA");
-# bus.draw();
-# # bus.save("bus.json");
-# # bus2 = Bus.load("bus.json");
-# # puts bus2.get_rows()
-
-# this is the main menu of the app
-loop do
-  puts '1. View available seats'
-  puts '2. Reserve seats'
-  puts '3. View help'
-  puts '4. Exit'
-
-  puts 'Please select (1-4): '
-  choice = gets.chomp
-
-  case choice
-  when '1'
-    puts 'Available seats here'
-  when '2'
-    puts 'Reverse seats here'
-  when '3'
-    puts 'Help details here'
-  when '4'
-    puts 'Thank you fopr using the bus seat allocation tool! Goodbye'
-    break
-  else
-    puts 'Invalid choice. Please try again using only a number.'
-  end
-end
+bus = Bus.new(8,4,{})
+# bus = Bus.load("bus.json");
+puts bus.get_rows()
+bus.book("A2");
+bus.book("A2");
+bus.book("B7");
+bus.book("D3");
+bus.check("BED7ABEA");
+bus.draw();
+# bus.save("bus.json");
+# bus2 = Bus.load("bus.json");
+# puts bus2.get_rows()
