@@ -1,5 +1,6 @@
 require './bus'
 require 'colorize'
+require_relative 'help.rb'
 
 $bus = Bus.load('bus.json')
 
