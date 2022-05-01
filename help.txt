@@ -1,0 +1,6 @@
+Welcome to the help line!
+
+Use the main menu prompts to navigate the application.
+If you are having trouble getting a specific menu item to work, please ensure you are following the input prompts exactly.
+
+If you need to reset the seat allocation, please input "Top Secret" at the menu prompt. This command is case senstitive!
